@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Globalization;
 
 namespace ControlStock.Entities
 {
@@ -40,6 +41,16 @@ namespace ControlStock.Entities
             QtyStock -= Quantity;
         }
 
-        //Implementar o toString
+        public override string ToString()
+        {
+            return "\nName: "
+                    + Name
+                    + "\nQuantity: "
+                    + QtyStock
+                    + "\nPreace each: "
+                    + Value.ToString("F2",CultureInfo.InvariantCulture)
+                    + "\nTotal: "
+                    + AmountInStock().ToString("F2", CultureInfo.InvariantCulture);
+        }
     }
 }

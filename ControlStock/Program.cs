@@ -1,5 +1,6 @@
 ﻿using ControlStock.Entities;
 using System;
+using System.Globalization;
 
 namespace ControlStock
 {
@@ -17,17 +18,21 @@ namespace ControlStock
             Console.WriteLine();
 
             Console.Write("Preace: ");
-            double Preace = double.Parse(Console.ReadLine());
+            double Preace = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            Console.WriteLine();
+            Console.Clear();
+
+            Console.WriteLine(" ==================== CASAS BAHIA ====================");
+            Product p = new Product(nameProduct,Quantity,Preace);
+            Console.Write(p);
             Console.WriteLine();
 
-            Product p = new Product(nameProduct,Quantity,Preace);
-
-            Console.Write("Cliente: ");
+            Console.Write("\nCliente: ");
             string NomeClient = Console.ReadLine();
             Console.WriteLine();
 
             Console.Write("Enter you Balance: ");
-            double Balance = double.Parse(Console.ReadLine());
+            double Balance = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
             Console.WriteLine();
 
             Client client = new Client(NomeClient, Balance);
