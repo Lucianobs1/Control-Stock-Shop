@@ -28,13 +28,13 @@ namespace ControlStock.Entities
             return QtyStock * Value;
         }
 
-        public void AddProduct(int Quantity)
+        public void AddItem(int Quantity)
         {
 
             QtyStock += Quantity;
         }
 
-        public void RemoveProduct(int Quantity)
+        public void RemoveItem(int Quantity)
         {
 
             QtyStock -= Quantity;
