@@ -44,5 +44,20 @@ namespace ControlStock.Entities
             Products.Remove(product);
 
         }
+
+        public Boolean ClientPayment(double Saldo)
+        {
+
+            foreach (Product ItensPurchase in Products)
+            {
+                if (Saldo >= ItensPurchase.AmountInStock())
+                {
+                    Console.WriteLine("Payment Approved");
+                    return true;
+                }
+            }
+            Console.WriteLine("Payment Repproved");
+            return false;
+        }
     }
 }

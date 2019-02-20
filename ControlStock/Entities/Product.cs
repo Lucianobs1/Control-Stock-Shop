@@ -39,5 +39,7 @@ namespace ControlStock.Entities
 
             QtyStock -= Quantity;
         }
+
+        //Implementar o toString
     }
 }
