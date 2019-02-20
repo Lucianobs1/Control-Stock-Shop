@@ -9,7 +9,6 @@ namespace ControlStock.Entities
         public string Nome { get; set; }
         public double Card { get; set; }
         public double Money { get; set; }
-        public ProcessOrder processOrder { get; set; }
         public List<Product> Products { get; set; } = new List<Product>();
 
         public Client()
@@ -31,32 +30,19 @@ namespace ControlStock.Entities
             Money = money;
         }
 
-    
-        public void addProduct(Product product) {
+
+        public void addProduct(Product product)
+        {
 
             Products.Add(product);
-            
+
         }
 
         public void RemoveProduct(Product product)
         {
 
             Products.Remove(product);
-            
-        }
 
-        public Boolean ClientPayment(double Saldo) {
-
-            foreach (Product ItensPurchase in Products)
-            {
-                if (Saldo >= ItensPurchase.AmountInStock())
-                {
-                    Console.WriteLine("Payment Approved");
-                    return true;
-                }
-            }
-            Console.WriteLine("Payment Repproved");
-            return false;
         }
     }
 }
